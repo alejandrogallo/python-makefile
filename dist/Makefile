@@ -1,5 +1,5 @@
-MAKEFILE_VERSION = v0.0.1
-MAKEFILE_DATE = 05-03-2017 12:30
+MAKEFILE_VERSION = v0.0.1-1-g513698d
+MAKEFILE_DATE = 05-03-2017 12:48
 
 ## <<HELP
 #
@@ -47,6 +47,7 @@ CLEAN_FILES     ?=
 QQUIET     ?=
 DEBUG      ?= @
 
+ifndef QQUIET
 ifeq ($(strip $(WITH_COLOR)),1)
 COLOR_B         ?= $(if $(TPUT),$(shell $(TPUT) setaf 5),"\033[0;35m")
 COLOR_E         ?= $(if $(TPUT),$(shell $(TPUT) sgr0),"\033[0m")
