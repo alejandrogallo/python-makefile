@@ -1,5 +1,5 @@
-MAKEFILE_VERSION = v0.0.1-1-g513698d
-MAKEFILE_DATE = 05-03-2017 12:48
+MAKEFILE_VERSION =
+MAKEFILE_DATE =
 
 ## <<HELP
 #
@@ -91,7 +91,7 @@ doc:
 
 update-gh-pages:
 	@echo "Warning: Black magic in action"
-	git push origin `git subtree split --prefix doc/build/html/ master`:gh-pages --force
+	git push origin $$(git subtree split --prefix doc/build/html/ master):gh-pages --force
 
 # =============
 # Main cleaning
