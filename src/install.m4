@@ -10,6 +10,6 @@ install-dev: ## Install developement version
 install-local: ## Install the package locally
 	python setup.py install --user
 
-install-local: ## Install the package
-	python setup.py install --user
+install: ## Install the package
+	python setup.py install
 
