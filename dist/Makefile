@@ -1,7 +1,7 @@
 
 # File: common-makefile/src/version.m4
-MAKEFILE_VERSION = v0.0.1-8-g468882f
-MAKEFILE_DATE = 11-05-2017 14:41
+MAKEFILE_VERSION = v0.0.1-10-gf0cc5ad
+MAKEFILE_DATE = 11-05-2017 14:52
 MAKEFILE_AUTHOR = Alejandro Gallo
 MAKEFILE_URL = https://github.com/alejandrogallo/python-makefile
 MAKEFILE_LICENSE = GPLv3
@@ -17,11 +17,6 @@ MAKEFILE_LICENSE = GPLv3
 
 # Local configuration
 -include config.mk
-
-PYTHON = python
-PY_LINTER = flake8
-
-REQUIREMENTS = requirements.txt
 
 CLEAN_FILES += \
 $(shell find . -name *.pyc) \
@@ -219,24 +214,29 @@ tags: ## Create python exhuberant ctags
 # File: install.m4
 
 
+REQUIREMENTS ?= requirements.txt
 install-dev-local: ## Install developement version locally
-	python setup.py develop --user
+	$(DBG_FLAG)$(PYTHON) setup.py develop --user
 
 install-dev: ## Install developement version
-	python setup.py develop --user
+	$(DBG_FLAG)$(PYTHON) setup.py develop --user
 
 install-local: ## Install the package locally
-	python setup.py install --user
+	$(DBG_FLAG)$(PYTHON) setup.py install --user
 
 install: ## Install the package
-	python setup.py install
+	$(DBG_FLAG)$(PYTHON) setup.py install
 
+install-deps: ## Install the package locally
+	$(DBG_FLAG)$(PIP) install -r $(REQUIREMENTS)
 
 
 
 # File: lint.m4
 
 
+# Linter program
+PY_LINTER ?= flake8
 # ============
 # Check syntax
 # ============
@@ -267,6 +267,37 @@ update-gh-pages: ## Update github pages
 
 test: ## Run the tests
 	$(DBG_FLAG)python setup.py test
+
+
+
+# File: virtualenv.m4
+
+
+ENV ?=
+ENV_FOLDER ?= env
+ENV_PIP ?= $(ENV_FOLDER)/bin/pip
+ENV_PYTHON ?= $(ENV_FOLDER)/bin/python
+VIRTUALENV ?= virtualenv
+
+ifdef ENV
+PYTHON ?= $(ENV_PYTHON)
+PIP ?= $(ENV_PIP)
+DEPENDENCIES += virtualenv
+DIST_DEPENDENCIES += virtualenv
+endif
+
+virtualenv: $(ENV_FOLDER) ## Create the python virtual environment
+$(ENV_FOLDER):
+	$(ARROW) "Creating virtual environment in '$(ENV_FOLDER)' \
+		with python executable '$(PYTHON_EXEC)'"
+	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON_EXEC) $(ENV_FOLDER)
+
+install-deps: ## Install python requirements
+	$(ARROW) Installing dependencies
+	$(DBG_FLAG)$(PIP) install -r requirements.txt
+
+
+
 
 
 

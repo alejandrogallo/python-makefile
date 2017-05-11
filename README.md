@@ -49,6 +49,15 @@
   * `ARROW`(`@echo "see`): 
   * `ARROW`(`@echo "===>"`): 
   * `ECHO`(`@echo`): 
+  * `REQUIREMENTS`(`requirements.txt`): 
+  * `PY_LINTER`(`flake8`): Linter program
+  * `ENV`(`empty`): 
+  * `ENV_FOLDER`(`env`): 
+  * `ENV_PIP`(`see`): 
+  * `ENV_PYTHON`(`see`): 
+  * `VIRTUALENV`(`virtualenv`): 
+  * `PYTHON`(`see`): 
+  * `PIP`(`see`): 
   * `MAKEFILE_UPDATE_URL`(`https://raw.githubusercontent.com/alejandrogallo/python-makefile/master/dist/Makefile`): 
   * `RM_FLAGS`(`-rf`): Remove command flags
   * `DEFAULT_CLEAN_FILES`(`empty`): Default clean file to be cleaned
