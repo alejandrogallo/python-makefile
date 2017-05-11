@@ -15,5 +15,6 @@ install-local: ## Install the package locally
 install: ## Install the package
 	$(DBG_FLAG)$(PYTHON) setup.py install
 
-install-deps: ## Install the package locally
-	$(DBG_FLAG)$(PIP) install -r $(REQUIREMENTS)
+install-deps: ## Install python requirements
+	$(ARROW) Installing dependencies
+	$(DBG_FLAG)$(PIP) install -r requirements.txt

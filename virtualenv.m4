@@ -20,10 +20,3 @@ $(ENV_FOLDER):
 	$(ARROW) "Creating virtual environment in '$(ENV_FOLDER)' \
 		with python executable '$(PYTHON_EXEC)'"
 	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON_EXEC) $(ENV_FOLDER)
-
-install-deps: ## Install python requirements
-	$(ARROW) Installing dependencies
-	$(DBG_FLAG)$(PIP) install -r requirements.txt
-
-
-

@@ -1,7 +1,7 @@
 
 # File: common-makefile/src/version.m4
-MAKEFILE_VERSION = v0.0.1-10-gf0cc5ad
-MAKEFILE_DATE = 11-05-2017 14:52
+MAKEFILE_VERSION = v0.0.1-11-g2782565
+MAKEFILE_DATE = 11-05-2017 14:54
 MAKEFILE_AUTHOR = Alejandro Gallo
 MAKEFILE_URL = https://github.com/alejandrogallo/python-makefile
 MAKEFILE_LICENSE = GPLv3
@@ -227,8 +227,9 @@ install-local: ## Install the package locally
 install: ## Install the package
 	$(DBG_FLAG)$(PYTHON) setup.py install
 
-install-deps: ## Install the package locally
-	$(DBG_FLAG)$(PIP) install -r $(REQUIREMENTS)
+install-deps: ## Install python requirements
+	$(ARROW) Installing dependencies
+	$(DBG_FLAG)$(PIP) install -r requirements.txt
 
 
 
@@ -291,13 +292,6 @@ $(ENV_FOLDER):
 	$(ARROW) "Creating virtual environment in '$(ENV_FOLDER)' \
 		with python executable '$(PYTHON_EXEC)'"
 	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON_EXEC) $(ENV_FOLDER)
-
-install-deps: ## Install python requirements
-	$(ARROW) Installing dependencies
-	$(DBG_FLAG)$(PIP) install -r requirements.txt
-
-
-
 
 
 
