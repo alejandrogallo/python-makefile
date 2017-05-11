@@ -12,11 +12,6 @@ include_once(common-makefile/src/version.m4)
 # Local configuration
 -include config.mk
 
-PYTHON = python
-PY_LINTER = flake8
-
-REQUIREMENTS = requirements.txt
-
 CLEAN_FILES += \
 $(shell find . -name *.pyc) \
 $(shell find . -name *.pyo) \
@@ -33,6 +28,7 @@ include_once(install.m4)
 include_once(lint.m4)
 include_once(doc.m4)
 include_once(test.m4)
+include_once(virtualenv.m4)
 
 define(
 _MAKEFILE_UPDATE_URL,

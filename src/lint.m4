@@ -1,6 +1,10 @@
 include_once(common-makefile/src/log.m4)dnl
 include_once(common-makefile/src/shell-utils.m4)dnl
 dnl
+dnl
+# Linter program
+PY_LINTER ?= flake8
+dnl
 # ============
 # Check syntax
 # ============

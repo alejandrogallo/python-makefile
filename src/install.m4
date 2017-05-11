@@ -1,15 +1,19 @@
 include_once(common-makefile/src/log.m4)dnl
 include_once(common-makefile/src/shell-utils.m4)dnl
 dnl
+REQUIREMENTS ?= requirements.txt
+dnl
 install-dev-local: ## Install developement version locally
-	python setup.py develop --user
+	$(DBG_FLAG)$(PYTHON) setup.py develop --user
 
 install-dev: ## Install developement version
-	python setup.py develop --user
+	$(DBG_FLAG)$(PYTHON) setup.py develop --user
 
 install-local: ## Install the package locally
-	python setup.py install --user
+	$(DBG_FLAG)$(PYTHON) setup.py install --user
 
 install: ## Install the package
-	python setup.py install
+	$(DBG_FLAG)$(PYTHON) setup.py install
 
+install-deps: ## Install the package locally
+	$(DBG_FLAG)$(PIP) install -r $(REQUIREMENTS)
