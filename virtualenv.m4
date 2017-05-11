@@ -9,8 +9,8 @@ ENV_PYTHON ?= $(ENV_FOLDER)/bin/python
 VIRTUALENV ?= virtualenv
 
 ifdef ENV
-PYTHON ?= $(ENV_PYTHON)
-PIP ?= $(ENV_PIP)
+PYTHON = $(ENV_PYTHON)
+PIP = $(ENV_PIP)
 DEPENDENCIES += virtualenv
 DIST_DEPENDENCIES += virtualenv
 endif
