@@ -1,7 +1,7 @@
 
 # File: common-makefile/src/version.m4
-MAKEFILE_VERSION = v0.0.1-11-g2782565
-MAKEFILE_DATE = 11-05-2017 14:54
+MAKEFILE_VERSION = v0.0.1-12-g75df184
+MAKEFILE_DATE = 11-05-2017 14:57
 MAKEFILE_AUTHOR = Alejandro Gallo
 MAKEFILE_URL = https://github.com/alejandrogallo/python-makefile
 MAKEFILE_LICENSE = GPLv3
@@ -290,8 +290,8 @@ endif
 virtualenv: $(ENV_FOLDER) ## Create the python virtual environment
 $(ENV_FOLDER):
 	$(ARROW) "Creating virtual environment in '$(ENV_FOLDER)' \
-		with python executable '$(PYTHON_EXEC)'"
-	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON_EXEC) $(ENV_FOLDER)
+		with python executable '$(PYTHON)'"
+	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON) $(ENV_FOLDER)
 
 
 

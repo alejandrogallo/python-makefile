@@ -18,5 +18,5 @@ endif
 virtualenv: $(ENV_FOLDER) ## Create the python virtual environment
 $(ENV_FOLDER):
 	$(ARROW) "Creating virtual environment in '$(ENV_FOLDER)' \
-		with python executable '$(PYTHON_EXEC)'"
-	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON_EXEC) $(ENV_FOLDER)
+		with python executable '$(PYTHON)'"
+	$(DBG_FLAG)$(VIRTUALENV) -p $(PYTHON) $(ENV_FOLDER)
