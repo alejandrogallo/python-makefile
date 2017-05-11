@@ -1,7 +1,7 @@
 
 # File: common-makefile/src/version.m4
-MAKEFILE_VERSION = v0.0.1-14-g49bafe4
-MAKEFILE_DATE = 11-05-2017 15:05
+MAKEFILE_VERSION = v0.0.1-15-ga7ebf6c
+MAKEFILE_DATE = 11-05-2017 15:08
 MAKEFILE_AUTHOR = Alejandro Gallo
 MAKEFILE_URL = https://github.com/alejandrogallo/python-makefile
 MAKEFILE_LICENSE = GPLv3
@@ -216,22 +216,27 @@ tags: ## Create python exhuberant ctags
 
 REQUIREMENTS ?= requirements.txt
 install-dev-local: ## Install developement version locally
+	$(ARROW) Installing development version locally
 	$(DBG_FLAG)$(PYTHON) setup.py develop --user
 
 install-dev: ## Install developement version
+	$(ARROW) Installing development version
 	$(DBG_FLAG)$(PYTHON) setup.py develop --user
 
 install-local: ## Install the package locally
+	$(ARROW) Installing locally
 	$(DBG_FLAG)$(PYTHON) setup.py install --user
 
 install: ## Install the package
+	$(ARROW) Installing...
 	$(DBG_FLAG)$(PYTHON) setup.py install
 
 uninstall: ## Uninstall the package
-	$(DBG_FLAG)$(PYTHON) setup.py uninstall
+	$(ARROW) Uninstalling...
+	$(DBG_FLAG)$(PIP) uninstall $(shell $(PYTHON) setup.py --name)
 
 install-deps: ## Install python requirements
-	$(ARROW) Installing dependencies
+	$(ARROW) Installing dependencies...
 	$(DBG_FLAG)$(PIP) install -r requirements.txt
 
 
