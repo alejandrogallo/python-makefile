@@ -23,6 +23,10 @@ uninstall: ## Uninstall the package
 	$(ARROW) Uninstalling...
 	$(DBG_FLAG)$(PIP) uninstall $(shell $(PYTHON) setup.py --name)
 
+install-deps-local: ## Install python requirements locally
+	$(ARROW) Installing dependencies...
+	$(DBG_FLAG)$(PIP) install --user -r requirements.txt
+
 install-deps: ## Install python requirements
 	$(ARROW) Installing dependencies...
 	$(DBG_FLAG)$(PIP) install -r requirements.txt
