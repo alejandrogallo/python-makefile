@@ -49,8 +49,16 @@
   * `ARROW`(`@echo "see`): 
   * `ARROW`(`@echo "===>"`): 
   * `ECHO`(`@echo`): 
-  * `REQUIREMENTS`(`requirements.txt`): 
+  * `REQUIREMENTS`(`requirements.txt`): Old-style requirements file
+  * `INSTALL_COMMAND`(`see`): Command to be run when make `install` is run
+  * `INSTALL_LOCAL_COMMAND`(`see`): Command to be run when make `install-local` is run
+  * `INSTALL_DEV_COMMAND`(`see`): Command to be run when make `install-dev` is run
+  * `INSTALL_DEV_LOCAL_COMMAND`(`see`): Command to be run when make `install-dev-local` is run
+  * `UNINSTALL_COMMAND`(`see`): Command to be run when make `uninstall` is run
+  * `INSTALL_DEPS_COMMAND`(`see`): Command to be run when make `install-deps` is run
+  * `INSTALL_DEPS_LOCAL_COMMAND`(`see`): Command to be run when make `install-deps-local` is run
   * `PY_LINTER`(`flake8`): Linter program
+  * `TEST_COMMAND`(`see`): Command to run for `make test`
   * `ENV`(`empty`): 
   * `ENV_FOLDER`(`env`): 
   * `ENV_PIP`(`see`): 
