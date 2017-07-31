@@ -7,11 +7,11 @@ REQUIREMENTS ?= requirements.txt
 # Command to be run when make `install` is run
 INSTALL_COMMAND ?= $(PYTHON) setup.py install
 # Command to be run when make `install-local` is run
-INSTALL_LOCAL_COMMAND ?= $(PYTHON) setup.py install --local
+INSTALL_LOCAL_COMMAND ?= $(PYTHON) setup.py install --user
 # Command to be run when make `install-dev` is run
 INSTALL_DEV_COMMAND ?= $(PYTHON) setup.py develop
 # Command to be run when make `install-dev-local` is run
-INSTALL_DEV_LOCAL_COMMAND ?= $(PYTHON) setup.py develop --local
+INSTALL_DEV_LOCAL_COMMAND ?= $(PYTHON) setup.py develop --user
 # Command to be run when make `uninstall` is run
 UNINSTALL_COMMAND ?= $(PIP) uninstall $(shell $(PYTHON) setup.py --name)
 # Command to be run when make `install-deps` is run
